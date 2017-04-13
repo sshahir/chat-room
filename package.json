@@ -1,9 +1,10 @@
 {
   "name": "chat",
   "version": "0.0.1",
-  "description": "basic chat application",
+  "description": "Basic group chat",
   "main": "server.js",
   "dependencies": {
+    "express": "^4.15.2",
     "mongodb": "^2.2.25",
     "socket.io": "^1.7.3"
   },
@@ -12,6 +13,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshahir/chat-room.git"
+  },
   "author": "shahir",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sshahir/chat-room/issues"
+  },
+  "homepage": "https://github.com/sshahir/chat-room#readme"
 }

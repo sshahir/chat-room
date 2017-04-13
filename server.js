@@ -1,7 +1,18 @@
-var mongo=require('mongodb').MongoClient,
-	client=require('socket.io').listen(8080).sockets,
+var express=require('express'),
+	app=express(),
+	http = require('http').Server(app),
+	mongo=require('mongodb').MongoClient,
+	client=require('socket.io')(http),
 	url="mongodb://admin:shahir1994@ds159670.mlab.com:59670/chat";
 	
+
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
 	
 mongo.connect(url,function(err,db){
 	if(err) throw err;

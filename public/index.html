@@ -52,7 +52,7 @@
 					<div class="chat_status well well-sm">Status: <span>Idle</span></div>
 			</div>
 		</div>
-		<script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
 		<script>
 			$(document).ready(function(){
 				var textArea=$(".msg"),
@@ -73,7 +73,7 @@
 					
 					
 				try{
-					var socket=io.connect('http://127.0.0.1:8080');
+					var socket=io();
 				}catch(e){
 					//Set status to user
 					
