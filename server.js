@@ -6,10 +6,10 @@ var express=require('express'),
 	url="mongodb://admin:shahir1994@ds159670.mlab.com:59670/chat";
 	
 app.use(express.static('public'));
-app.get('/', function(req, res){
+/*app.get('/', function(req, res){
 	console.log('Request made');
   res.sendFile(__dirname + '/public/index.html');
-});
+});*/
 
 http.listen(3000, function(){
   console.log('listening on *:3000');
