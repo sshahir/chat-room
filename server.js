@@ -33,7 +33,7 @@ mongo.connect(url,function(err,db){
 				message=data.message,
 				whitespacePattern=/^\s*$/;
 			if(whitespacePattern.test(name)||whitespacePattern.test(message)){
-				sendStatus('Name and message is required.');
+				sendStatus('Name and message, both needed.');
 			}else{
 				col.insert({name:name,message:message},function(){
 					

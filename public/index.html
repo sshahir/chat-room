@@ -59,10 +59,10 @@
 						
 						if(s!==statusDefault){
 							var delay=setTimeout(function(){
-								setStatus(statusDefault);
-								status.fadeOut();
+								status.fadeOut(2000);
 								clearInterval(delay);
 							},3000);
+							//setStatus(statusDefault);
 						}
 					};
 					
@@ -80,7 +80,7 @@
 						if(data.length){
 							//loop through results
 							for(var x=0; x<data.length; x=x+1){
-								var message="<div class='chat_msg'>	"+data[x].name+" : "+data[x].message+"</div>";
+								var message="<div class='chat_msg'><strong>	"+data[x].name+"</strong> : "+data[x].message+"</div>";
 								$(".chat_msgs").prepend(message);					
 							}
 						}
@@ -89,7 +89,7 @@
 					//Listen for a status
 					socket.on('status',function(data){
 						setStatus((typeof data === 'object')?data.message:data);
-						status.fadeIn();
+						status.hide().fadeIn(1000);
 						
 						if(data.clear===true){
 							textArea.val('');
