@@ -7,6 +7,7 @@ var express=require('express'),
 	
 
 app.get('/', function(req, res){
+	console.log('Request made');
   res.sendFile(__dirname + '/public/index.html');
 });
 
