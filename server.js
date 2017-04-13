@@ -5,7 +5,7 @@ var express=require('express'),
 	client=require('socket.io')(http),
 	url="mongodb://admin:shahir1994@ds159670.mlab.com:59670/chat";
 	
-
+app.use(express.static('public'));
 app.get('/', function(req, res){
 	console.log('Request made');
   res.sendFile(__dirname + '/public/index.html');
