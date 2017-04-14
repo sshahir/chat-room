@@ -22,7 +22,7 @@ mongo.connect(url,function(err,db){
 			};
 		
 		//Emit all messages
-		col.find().limit(100).sort({_id:1}).toArray(function(err,res){
+		col.find().sort({_id:1}).toArray(function(err,res){
 			if(err) throw err;
 			socket.emit('output',res);
 		});
