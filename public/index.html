@@ -111,11 +111,13 @@
 							event.preventDefault();
 						}
 					});
-					$(".send_btn").on('click',function(){
+					$(".send_btn").on('click',function(event){
 						socket.emit('input',{
 								name:chatName.val(),
 								message:textArea.val()
 							});
+							
+							event.preventDefault();
 					});
 				}
 			});
