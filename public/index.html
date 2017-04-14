@@ -49,6 +49,7 @@
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
 			$(document).ready(function(){
+				$('.chat_msgs').animate({scrollTop:$('.chat_msgs').height()}, 'slow');
 				var textArea=$(".msg"),
 					chatName=$(".chat_name"),
 					status=$(".chat_status span"),
@@ -81,7 +82,8 @@
 							//loop through results
 							for(var x=0; x<data.length; x=x+1){
 								var message="<div class='chat_msg'><strong>	"+data[x].name+"</strong> : "+data[x].message+"</div>";
-								$(".chat_msgs").prepend(message);					
+								$(".chat_msgs").append(message);	
+								$('.chat_msgs').animate({scrollTop:$('.chat_msgs').height()}, 'slow');	
 							}
 						}
 					});
@@ -111,8 +113,8 @@
 					});
 					$(".send_btn").on('click',function(){
 						socket.emit('input',{
-								name:name,
-								message:self.value
+								name:chatName.val(),
+								message:textArea.val()
 							});
 					});
 				}
